@@ -2,11 +2,28 @@ const carCollection = ["toyota", "fiat", "honda", "bmw"];
 
 function updateCarCollection(carBrand) {
   // Start coding here
+  const incomingCar = carBrand.toLowerCase()
+  const allCars = carCollection.map((item) => {
+    return item;
+  });
+
+
+  if (allCars.includes(incomingCar)) {
+    return `${incomingCar} already exists in position ${carCollection.indexOf(
+      incomingCar
+    )} of the car collection`;
+  }
+  else if(incomingCar.length <= 0 ){
+    return "Please enter new car"
+  }
+  else {
+    allCars.push(incomingCar)
+    return `New car collection is: ${allCars}`;
+  }
 }
 
-//ผลลัพธ์ที่ควรได้จาก Example case
-//ในกรณีที่ยังไม่มียี่ห้อรถใน carCollection
-console.log(updateCarCollection("audi")); //new car collection is : toyota,fiat,honda,bmw,audi.
+console.log(updateCarCollection(""))
+console.log(updateCarCollection("bmw"))
 
-//ในกรณีที่มียี่ห้อรถใน carCollection
-console.log(updateCarCollection("toyota")); //toyota has already existed in the 1 position of car collection.
+console.log(updateCarCollection("audi"))
+console.log(updateCarCollection("Bat Mobile"))

@@ -1,12 +1,28 @@
-let crimeRecordNames = ["Theodora Milenko", "Tinashe Benigno", "Mahalia Priyanka", "Maisy Sudhir"];
+let crimeRecordNames = [
+  "Theodora Milenko",
+  "Tinashe Benigno",
+  "Mahalia Priyanka",
+  "Theodora Milenko",
+];
+
+crimeRecordNames = crimeRecordNames.filter(
+  (item, index) => crimeRecordNames.indexOf(item) === index
+);
 
 function searchCrimeRecord(name) {
   // Start coding here
+  const isCrime = crimeRecordNames.filter((item) => {
+    return item === name;
+  });
+  if (isCrime.length >= 1) {
+    return `${isCrime} has a crime!!!`;
+  } else {
+    return `${name} has no crime`;
+  }
 }
 
-//ผลลัพธ์ที่ควรได้จาก Example case
-//ในกรณีที่ไม่เคยมีประวัติเกี่ยวกับอาชญากรรม
-console.log(searchCrimeRecord("Dilan Sandra")); //"Dilan Sandra has no crime record"
+console.log(searchCrimeRecord("Theodora Milenko"));
+console.log(searchCrimeRecord("Mahalia Priyanka"));
 
-//ในกรณีที่เคยมีประวัติเกี่ยวกับอาชญากรรม
-console.log(searchCrimeRecord("Tinashe Benigno")); //"Tinashe Benigno has crime record !!!"
+console.log(searchCrimeRecord("Ruj"));
+console.log(searchCrimeRecord("DF Bright"));

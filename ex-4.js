@@ -374,4 +374,19 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+
+const isMember = bills.filter((item) => {
+  if (item.member) {
+    return item;
+  }
+});
+
+const MemberList = isMember.map((item) => {
+  return item.member.name;
+});
+
+const totalMembers = MemberList.filter((item, index) => {
+  return MemberList.indexOf(item) === index;
+});
+
+console.log(`Unique Members Count: ${totalMembers.length}`);
