@@ -374,4 +374,14 @@ const bills = [
 ];
 
 // Start coding here
-const billMembers;
+//แสดงผลชื่อสมาชิกจากรายการสั่งซื้อสินค้าทั้งหมด
+//แยกเฉพาะ member ที่มีชื่อ bills.member!==null :
+
+const billMembers = bills
+  .filter((arr) => {
+    return arr.member !== null;
+  })
+  // ผลหลัง filter เป็น Array[object],menber เป็น object{name,age}
+  //เลือกเอาเฉพาะชื่อเก็บใน Array ตัวใหม่
+  .map((arr) => arr.member.name);
+console.log(billMembers);

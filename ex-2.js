@@ -374,5 +374,10 @@ const bills = [
 ];
 
 // Start coding here
-
-const newBills;
+//เลือกเฉพาะรายการสั่งซื้อสินค้าที่มีข้อมูลสมาชิกเท่านั้น member!=null
+//เก็บใน Array ตัวใหม่
+const newBills = bills.filter((arr) => {
+  // console.log(arr);
+  return arr.member !== null;
+});
+console.log(newBills);

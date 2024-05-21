@@ -374,4 +374,38 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+//นับจำนวนสมาชิกทั้งหมด โดยจะไม่นับชื่อที่ซ้ำกัน
+//แยกเฉพาะ member ที่มีชื่อ
+//เก็บชื่อไว้ใน array ชุดใหม่โดยไม่ซ้ำ
+//นำจำนวนชื่อมาแสดง
+// const totalMembers = bills
+//   .filter((arr) => arr.member !== null)
+//   .map((arr) => arr.member.name)
+//   .filter((name, index, arr) => {
+//     console.log(name);
+//     console.log(index);
+//     console.log(arr.indexOf(name));
+//     return index === arr.indexOf(name);
+//   });
+
+const Members = bills
+  .filter((arr) => arr.member !== null)
+  .map((arr) => arr.member.name);
+const UniqueMembers = (arr) => {
+  // console.log(arr);
+  const result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (!result.includes(arr[i])) {
+      // console.log(i);
+      // console.log(arr[i]);
+      // console.log(result);
+      // console.log(!result.includes(arr[i]));
+      result.push(arr[i]);
+    }
+  }
+  return result;
+};
+// console.log(UniqueMembers(Members));
+const totalMembers = UniqueMembers(Members);
+
+console.log(`Unique Members Count: ${totalMembers.length}`);

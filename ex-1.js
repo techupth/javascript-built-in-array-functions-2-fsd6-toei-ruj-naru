@@ -374,3 +374,15 @@ const bills = [
 ];
 
 // Start coding here
+//ให้หายอดชำระรวมทั้งหมดใน bills
+//ข้อมูลสินค้าเป็น Array[Object]
+//Summary Array[.total]
+const summaryOfTotal = bills.reduce((acc, curr) => {
+  console.log(acc);
+  console.log(curr.total);
+  return acc + Number(curr.total);
+}, 0);
+console.log(summaryOfTotal);
+//แสดงผลโดยมีข้อความรวมกับผลลัพธ์
+console.log(`Total bill transaction is ${summaryOfTotal}`);
+//Answer: "Total bill transaction is 1410083"
