@@ -1,8 +1,10 @@
 function isPalindrome(string) {
-  // Start coding here
+  const reversedString = string.split("").reverse().join("");
+  console.log(reversedString);
+  return reversedString === string;
 }
 
 //Example case
-console.log(isPalindrome("reviver"));// true
-console.log(isPalindrome("บวบ"));// true
-console.log(isPalindrome("deliver"));// false
+console.log(isPalindrome("reviver")); // true
+console.log(isPalindrome("บวบ")); // true
+console.log(isPalindrome("deliver")); // false
